@@ -38,30 +38,39 @@ function Navbar({
           <div className=" justify-content-end align-items-center d-flex gap-3">
             <Link to={"/"}>
               <button
-                className="btn px-3 rounded fw-semibold text-light"
+                className="btn px-3 rounded fw-semibold text-light fs-6"
                 style={{ backgroundColor: "#0c0b0b23" }}
               >
                 Home
               </button>
             </Link>
-            <Link to={"/Play"}>
+            <Link to={"/Color_Match"}>
               <button
-                className="btn px-3 rounded fw-semibold text-light"
+                className="btn px-3 rounded fw-semibold text-light fs-6"
                 style={{ backgroundColor: "#0c0b0b23" }}
               >
-                Play
+                Color Match
               </button>
             </Link>
             <Link to={"/Leaderboard"}>
               <button
-                className="btn px-3 rounded fw-semibold text-light"
+                className="btn px-3 rounded fw-semibold text-light fs-6"
                 style={{ backgroundColor: "#0c0b0b23" }}
               >
                 Leaderboard
               </button>
             </Link>
+
+             <Link to={"/Color_Memory_Master"}>
+              <button
+                className="btn px-3 rounded fw-semibold text-light fs-6"
+                style={{ backgroundColor: "#0c0b0b23" }}
+              >
+                Color Memory Master
+              </button>
+            </Link>
             <button
-              className="btn px-3 rounded fw-semibold text-light"
+              className="btn px-3 rounded fw-semibold text-light fs-6"
               style={{ backgroundColor: "#0c0b0b23" }}
               onClick={ThemLight}
             >

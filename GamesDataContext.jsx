@@ -9,12 +9,15 @@ export function GamesDataProvider({ children }) {
   const [name, setName] = useState("");
   const [Difficulty, setDifficulty] = useState("");
   const [Goal, setGoal] = useState(0);
-
+  const [score, setScore] = useState(0);
+  const [mistake, setMistake] = useState(0);
+  const [mistakes, setMistakes] = useState(0);
   const ThemLight = () => setLightMood(!lightMood);
   const changeColor = (e) => setColor(e.target.value);
   const ChangeName = (e) => setName(e.target.value);
   const ChangeDifficulty = (e) => setDifficulty(e.target.value);
   const ChangeGoal = (e) => setGoal(e.target.value);
+  const [scores, setScores] = useState(0);
 
   return (
     <GameDataContext.Provider
@@ -35,6 +38,14 @@ export function GamesDataProvider({ children }) {
         ChangeName,
         ChangeDifficulty,
         ChangeGoal,
+        score,
+        setScore,
+        mistake,
+        setMistake,
+        mistakes,
+        setMistakes,
+        scores,
+        setScores
       }}
     >
       {children}

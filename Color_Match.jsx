@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import { GameDataContext } from "./GamesDataContext";
 
-function Play() {
+function Color_Match() {
   const {
     background,
     setBackground,
@@ -14,12 +14,16 @@ function Play() {
     name,
     Goal,
     Difficulty,
+    score,
+    setScore,
+    mistake,
+    setMistake,
   } = useContext(GameDataContext);
 
   const backgrounds = [
-    { id: 1, src: "https://h.top4top.io/p_37273zity0.jpg" },
+    { id: 1, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
     { id: 2, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
-    { id: 3, src: "https://j.top4top.io/p_3727atiwv0.jpg" },
+    { id: 3, src: "https://h.top4top.io/p_37273zity0.jpg" },
     { id: 4, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
     { id: 5, src: "https://d.top4top.io/p_37270kygs0.jpg" },
     { id: 6, src: "https://g.top4top.io/p_372730bv60.jpg" },
@@ -40,9 +44,7 @@ function Play() {
   const [currentColor, setCurrentColor] = useState("red");
   const [currentWord, setCurrentWord] = useState("blue");
   const [time, setTime] = useState(15);
-  const [mistake, setMistake] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [score, setScore] = useState(0);
   const [answers, setAnswers] = useState([]);
   const Navigate = useNavigate();
 
@@ -141,20 +143,52 @@ function Play() {
 
       <div className="container text-center mt-5">
         {/* معلومات اللعبة */}
+
         <div className="mb-4">
-          <h2 style={{ color: "white" }}>Hello, {name || "Guest"}!</h2>
-          <p style={{ color: "white", fontSize: "1.2rem" }}>
-            Time: {time}s | Score: {score} | Progress: {progress} / {Goal} |
-            Mistakes: {mistake}
-          </p>
+          <h2 className="text-light mb-3">Hello, {name || "Guest"} 👋</h2>
+
+          <div
+            className="p-3 rounded"
+            style={{
+              background: "#ffffff1a",
+              backdropFilter: "blur(5px)",
+            }}
+          >
+            <div className="row text-center">
+              <div className="col-6 col-md-3 mb-2">
+                <p className="text-light mb-1">Time</p>
+                <h5 style={{ color: color }}>{time}s</h5>
+              </div>
+
+              <div className="col-6 col-md-3 mb-2">
+                <p className="text-light mb-1">Score</p>
+                <h5 style={{ color: color }}>{score}</h5>
+              </div>
+
+              <div className="col-6 col-md-3 mb-2">
+                <p className="text-light mb-1">Progress</p>
+                <h5 style={{ color: color }}>
+                  {progress} / {Goal}
+                </h5>
+              </div>
+
+              <div className="col-6 col-md-3 mb-2">
+                <p className="text-light mb-1">Mistakes</p>
+                <h5 style={{ color: color }}>{mistake}</h5>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* السؤال الحالي */}
         <h1
           style={{ color: currentColor, fontSize: "4rem", fontWeight: "bold" }}
+          className=" fst-italic "
         >
           {currentWord}
         </h1>
+
+        <hr className=" w-100" style={{ color: color }} />
 
         {/* أزرار الألوان */}
         <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
@@ -164,13 +198,13 @@ function Play() {
               onClick={() => handleAnswer(c)}
               style={{
                 backgroundColor: color,
-                color: c === "black" ? "white" : "black",
                 border: `2px solid ${c}`,
                 padding: "10px 20px",
                 borderRadius: "10px",
                 fontWeight: "bold",
                 cursor: "pointer",
               }}
+              className=" text-light"
             >
               {c}
             </button>
@@ -181,4 +215,4 @@ function Play() {
   );
 }
 
-export default Play;
+export default Color_Match;

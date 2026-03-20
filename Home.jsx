@@ -20,7 +20,7 @@ function Home() {
   } = useContext(GameDataContext);
 
   const backgrounds = [
-    { id: 1, src: "https://h.top4top.io/p_37273zity0.jpg" },
+    { id: 1, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
     { id: 2, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
     { id: 3, src: "https://j.top4top.io/p_3727atiwv0.jpg" },
     { id: 4, src: "https://h.top4top.io/p_37276z5lb0.jpg" },
@@ -155,15 +155,25 @@ function Home() {
                   />
                 </div>
               </div>
+              <div className=" d-flex align-items-center gap-3">
+                <Link to={"/Color_Match"}>
+                  <button
+                    className="btn btn-sm px-4 mt-4 text-light"
+                    style={{ backgroundColor: color }}
+                  >
+                    Color Match
+                  </button>
+                </Link>
 
-              <Link to={"/Play"}>
-                <button
-                  className="btn btn-sm px-4 mt-4 text-light"
-                  style={{ backgroundColor: color }}
-                >
-                  Start Game
-                </button>
-              </Link>
+                <Link to={"/Color_Memory_Master"}>
+                  <button
+                    className="btn btn-sm px-4 mt-4 text-light"
+                    style={{ backgroundColor: color }}
+                  >
+                    Color Memory Master
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
