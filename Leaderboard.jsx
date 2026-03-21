@@ -43,15 +43,20 @@ function Leaderboard() {
 
   const Navigate = useNavigate();
 
-  // 🎯 دالة لحساب النتيجة النهائية
+  const finalScore = score || scores;
+  const finalMistakes = mistake || mistakes;
+
+
   const getFinalResult = () => {
     // نسبة الإنجاز
-    const percent = score / Goal;
+    const percent = finalScore / Goal;
 
     if (percent >= 0.8) return "🔥 Excellent!";
     if (percent >= 0.5) return "👍 Good!";
     return "💪 Try Again!";
   };
+
+   
 
   return (
     <>
@@ -105,7 +110,7 @@ function Leaderboard() {
           <div className="row">
             <div className="col-6 col-md-3 mb-3">
               <p style={{ color: "white", fontWeight: "500" }}>Score</p>
-              <h4 style={{ color }}>{score ? score : scores}</h4>
+              <h4 style={{ color }}>{finalScore}</h4>
             </div>
 
             <div className="col-6 col-md-3 mb-3">
@@ -115,7 +120,7 @@ function Leaderboard() {
 
             <div className="col-6 col-md-3 mb-3">
               <p style={{ color: "white", fontWeight: "500" }}>Mistakes</p>
-              <h4 style={{ color }}>{mistake ? mistake : mistakes}</h4>
+              <h4 style={{ color }}>{finalMistakes}</h4>
             </div>
 
             <div className="col-6 col-md-3 mb-3">

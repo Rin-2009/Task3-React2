@@ -254,7 +254,7 @@ function Color_Memory_Master() {
           {cards.map((emoji, index) => (
             <div
               key={index}
-              onClick={() => handleClick(index)}
+              onMouseEnter={() => handleClick(index)}
               style={{
                 width: "100px",
                 height: "80px",

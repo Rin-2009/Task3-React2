@@ -29,6 +29,7 @@ function Navbar({
               style={{ backgroundColor: color }}
             >
               AE
+       
             </span>
             <h3 className=" fst-italic fw-semibold fs-4 mt-2 text-light">
               ALAA ALDİN ALHALLAK
