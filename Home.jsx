@@ -128,6 +128,7 @@ function Home() {
                     type="text"
                     onChange={ChangeName}
                     className="d-block form-control bg-black text-light"
+                    value={name}
                   />
                 </div>
                 <div className="col-md-6">
@@ -151,6 +152,7 @@ function Home() {
                   <input
                     type="number"
                     onChange={ChangeGoal}
+                     value={Goal}
                     className="d-block form-control bg-black text-light"
                   />
                 </div>
